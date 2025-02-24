@@ -13,5 +13,10 @@ def process():
     response_text = manual_testing(data)  # Process the input
     return jsonify(response=response_text)  # Send response back to frontend
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

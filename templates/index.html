@@ -234,7 +234,7 @@ body {
             <li><a href="#">Home</a></li>
             <li><a href="#">Analyze</a></li>
             <li><a href="#">History</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
@@ -252,7 +252,7 @@ body {
                 <div class="chat-message bot visible">Hello! Enter a news article to check its authenticity.</div>
             </div>
             <div class="input-box">
-                <input type="text" id="newsInput" placeholder="Type your news URL or text...">
+                <input type="text" id="newsInput" placeholder="Type your news text...">
                 <button onclick="analyzeNews()">Send</button>
             </div>
         </main>

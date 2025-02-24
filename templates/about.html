@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Fake News Detection</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 2rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+        }
+        .navbar h1 {
+            font-size: 24px;
+            color: cyan;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: cyan;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: cyan;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <nav class="navbar">
+        <h1>Fake News Detection</h1>
+        <ul class="nav-links">
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="#">Analyze</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+        
+        
+        <h2>Introduction</h2>
+        <p>
+            In today’s digital world, where news travels at lightning speed through social media, blogs, and online news portals, the spread of fake news has become a major concern. Fake news refers to deliberately misleading or completely false information, often created to manipulate public opinion, drive political agendas, generate profits, or cause social unrest. The rapid growth of digital communication has made it easier for false information to reach millions of people in a matter of minutes, making fake news detection a critical necessity.
+        </p> 
+        <h2>What is Fake news?</h2>
+        <p>
+            Fake news is false or misleading information that is presented as legitimate news. It can take various forms, including:
+        </p>
+        <p>
+            <ul>
+                <li><b>Completely fabricated news</b> – Articles or reports that are entirely made up without any factual basis.</li>
+                <li><b>Misleading headlines</b> – Clickbait titles that misrepresent the content to attract views.</li>
+                <li><b>Satire mistaken as real news</b> – Content intended for humor or parody but perceived as factual by audiences.</li>
+                <li><b>Manipulated content</b> – Real images, videos, or articles that are altered to mislead readers.</li>
+                <li><b>Propaganda</b> – News created to push political, social, or ideological narratives.</li>
+            </ul>
+            
+        </p>   
+
+        <h2>The Need for Fake News Detection</h2>
+        <p>To combat the rise of misinformation, fake news detection systems use <b>machine learning</b> and <b>natural language processing (NLP)</b> to analyze news articles and determine their credibility. These systems help:</p>
+
+        <ol>
+            <li><b>Prevent the Spread of False Information</b> – Automated tools can quickly identify and flag fake news before it reaches a large audience.</li>
+            <li><b>Protect Public Opinion and Democracy</b> – Reliable information ensures fair elections, informed decision-making, and social stability.</li>
+            <li><b>Reduce Social and Economic Harm</b> – Fake news can damage reputations, affect businesses, and even incite violence. Detecting it early minimizes these risks.</li>
+            <li><b>Enhance Media Literacy</b> – By identifying unreliable sources, these systems help educate users about critical thinking in digital media.</li>
+        </ol>
+        
+        
+        <h2>How It Works</h2>
+        <p>The <b>Fake News Detection System</b> uses <b>Machine Learning</b> models to classify news articles as real or fake based on textual analysis. The detection process follows these steps:</p>
+
+<ol>
+    <li><b>Data Collection</b>
+        <ul>
+            <li>The system is trained using labeled datasets containing real and fake news articles.</li>
+            <li>Common datasets used include the <b>Fake News Dataset (Kaggle)</b>, <b>LIAR Dataset</b>, and <b>BuzzFeed News Fake News Data</b>.</li>
+        </ul>
+    </li>
+
+    <li><b>Data Preprocessing</b>
+        <ul>
+            <li>Raw text from news articles is cleaned to remove special characters, punctuation, and stopwords.</li>
+            <li>Text is converted into a standardized format using <b>tokenization</b> and <b>stemming/lemmatization</b>.</li>
+        </ul>
+    </li>
+
+    <li><b>Feature Extraction</b>
+        <ul>
+            <li>The cleaned text is transformed into numerical data that machine learning models can understand.</li>
+            <li>Techniques like <b>TF-IDF (Term Frequency-Inverse Document Frequency)</b> or <b>Count Vectorization</b> are used to extract meaningful features.</li>
+        </ul>
+    </li>
+
+    <li><b>Model Training</b>
+        <ul>
+            <li>Various Machine Learning algorithms are trained using labeled data.</li>
+            <li>Models such as <b>Logistic Regression</b>, <b>Decision Tree</b>, <b>Random Forest</b>, and <b>Gradient Boosting</b> learn patterns from the dataset to distinguish between fake and real news.</li>
+        </ul>
+    </li>
+
+    <li><b>Model Evaluation</b>
+        <ul>
+            <li>The trained models are tested using unseen data to measure their <b>accuracy</b>, <b>precision</b>, <b>recall</b>, and <b>F1-score</b>.</li>
+            <li>The best-performing model is selected for real-time fake news detection.</li>
+        </ul>
+    </li>
+
+    <li><b>News Classification</b>
+        <ul>
+            <li>When a user submits a news article, the system preprocesses the text and extracts features.</li>
+            <li>The trained model then classifies the article as <b>Fake</b> or <b>Real</b> based on learned patterns.</li>
+        </ul>
+    </li>
+
+    <li><b>Result Display</b>
+        <ul>
+            <li>The classification result is displayed on the web interface, helping users quickly verify the authenticity of news articles.</li>
+        </ul>
+    </li>
+</ol>
+
+<p>By leveraging <b>machine learning models</b>, this system efficiently detects fake news and helps prevent the spread of misinformation.</p>
+
+        
+        <h2>Features</h2>
+        <ul>
+            <li>Real-time fake news classification</li>
+            <li>Multiple machine learning models for accuracy</li>
+            <li>User-friendly web interface</li>
+            <li>Dataset training for improved results</li>
+            <li>Secure and reliable predictions</li>
+        </ul>
+        
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>Python (Flask) for backend processing</li>
+            <li>Machine Learning algorithms including Logistic Regression, Decision Tree, Random Forest, and Gradient Boosting</li>
+            <li>HTML, CSS, and JavaScript for the front-end</li>
+        </ul>
+        
+        <h2>Datasets Used</h2>
+        <p>The system is trained on various datasets to enhance accuracy and ensure robustness in detection.</p>
+        <ul>
+            <li><a href="https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset" target="_blank"><b>Fake News Dataset (Kaggle)</b></a> - A large collection of labeled fake and real news articles.</li>
+        </ul>
+        
+        <h2>Future Enhancements</h2>
+        <p>The Fake News Detection System is continuously evolving. Future updates will include:</p>
+        <ul>
+            <li>Integration of deep learning models for better accuracy</li>
+            <li>Support for multiple languages</li>
+            <li>Browser extension for instant verification</li>
+            <li>Community reporting system for user feedback</li>
+        </ul>
+    </div>
+</body>
+</html>
