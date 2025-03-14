@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection Analysis</title>
+    <link rel="icon" tyoe="image/png" href="{{url_for('static',filename='fk.png')}}">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 2rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+        }
+        .navbar h1 {
+            font-size: 24px;
+            color: cyan;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: cyan;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: cyan;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 20px; 
+            background: black; 
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td { 
+            border: 1px solid #ddd; 
+            padding: 12px; 
+            text-align: center; 
+        }
+        th { 
+            background-color: #3498db; 
+            color: white; 
+        }
+        .matrix img { 
+            width: 100%; 
+            max-width: 400px; 
+            display: block; 
+            margin: 10px auto; 
+            border-radius: 5px; 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <h1>Fake News Detection</h1>
+            <ul class="nav-links">
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('Analyze')}}">Analyze</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    <div class="container">
+        <h1>Fake News Detection - Model Analysis</h1>
+        <p class="description">This section provides a detailed analysis of the four machine learning models used to detect fake news. Each model's performance is evaluated using a confusion matrix. The confusion matrix helps measure accuracy, precision, recall, and overall effectiveness in identifying real and fake news. By analyzing true positives, true negatives, false positives, and false negatives, this section highlights the strengths and weaknesses of each model. It also compares their performance to determine which models are most reliable for detecting fake news in real-world scenarios.</p>
+        
+        <h2>Confusion Matrices</h2>
+<p>A confusion matrix is a tool used to evaluate the performance of a machine learning model. It compares the model's predictions with the actual outcomes and is divided into four parts:</p>
+
+<ol>
+  <li><strong>True Positives (TP):</strong> Correctly predicted positive cases (e.g., correctly identifying fake news as fake).</li>
+  <li><strong>True Negatives (TN):</strong> Correctly predicted negative cases (e.g., correctly identifying real news as real).</li>
+  <li><strong>False Positives (FP):</strong> Incorrectly predicted positive cases (e.g., wrongly labeling real news as fake).</li>
+  <li><strong>False Negatives (FN):</strong> Incorrectly predicted negative cases (e.g., wrongly labeling fake news as real).</li>
+</ol>
+
+<p>Using these values, metrics like accuracy, precision, recall, and F1-score can be calculated. The confusion matrix helps in understanding the model's performance and identifying areas for improvement.</p>
+        <div class="matrix">
+            <h2>1.Logistic Regression</h2>
+            <p>Logistic Regression is a statistical and machine learning algorithm used for binary classification tasks. It predicts the probability of an input belonging to a particular class (e.g., 0 or 1) using a logistic function (sigmoid). It works by modeling the relationship between input features and the probability of the output, making it simple, interpretable, and effective for linearly separable data.</p>
+            <img src="{{url_for('static',filename='LR.png')}}" alt="Logistic Regression Confusion Matrix">
+        </div>
+        <div class="matrix">
+            <h2>2.Decision Tree</h2>
+            <p>A Decision Tree is a machine learning algorithm used for both classification and regression tasks. It works by splitting the data into smaller subsets based on feature values, creating a tree-like structure of decisions. Each internal node represents a decision based on a feature, each branch represents an outcome of that decision, and each leaf node represents the final result (class label or value). Decision Trees are easy to interpret, handle both numerical and categorical data, and can model non-linear relationships. However, they can overfit the data if not properly pruned or constrained.</p>
+            <img src="{{url_for('static',filename='DT.png')}}" alt="Decision Tree Confusion Matrix">
+        </div>
+        <div class="matrix">
+            <h2>3.Random Forest</h2>
+            <p>Random Forest is an ensemble machine learning algorithm used for both classification and regression tasks. It builds multiple decision trees during training and combines their outputs to improve accuracy and reduce overfitting. Each tree is trained on a random subset of the data and features, introducing diversity. The final prediction is made by averaging the results (for regression) or using majority voting (for classification). Random Forest is robust, handles large datasets well, and provides feature importance, but it can be computationally expensive and less interpretable compared to a single decision tree.</p>
+            <img src="{{url_for('static',filename='RF.png')}}" alt="Random Forest Confusion Matrix">
+        </div>
+        <div class="matrix">
+            <h2>4.Gradient Boosting</h2>
+            <p>Gradient Boosting is a machine learning method that builds models step by step. It starts with a simple model and then adds more models to fix the mistakes of the previous ones. Each new model focuses on the errors left by the earlier models. This process continues until the predictions are accurate. It works well for both classification and regression tasks and can handle complex data. However, it can be slow and may overfit if not carefully tuned. Examples include XGBoost, LightGBM, and CatBoost.</p>
+            <img src="{{url_for('static',filename='GB.png')}}" alt="Gradient Boosting Confusion Matrix">
+        </div>
+        
+        <h2>Performance Metrics</h2>
+        <p class="description">These metrics provide insight into how well each model performed in classifying fake and real news.</p>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1-Score</th>
+                <th>ROC-AUC</th>
+            </tr>
+            <tr>
+                <td>Logistic Regression</td>
+                <td>98.87%</td>
+                <td>98.54%</td>
+                <td>99.10%</td>
+                <td>98.82%</td>
+                <td>98.88%</td>
+            </tr>
+            <tr>
+                <td>Decision Tree</td>
+                <td>99.63%</td>
+                <td>99.55%</td>
+                <td>99.68%</td>
+                <td>99.61%</td>
+                <td>99.63%</td>
+            </tr>
+            <tr>
+                <td>Random Forest</td>
+                <td>98.88%</td>
+                <td>98.74%</td>
+                <td>98.91%</td>
+                <td>98.83%</td>
+                <td>98.88%</td>
+            </tr>
+            <tr>
+                <td>Gradient Boosting</td>
+                <td>99.41%</td>
+                <td>99.08%</td>
+                <td>99.68%</td>
+                <td>99.38%</td>
+                <td>99.42%</td>
+            </tr>
+        </table>
+        
+        <h2>Insights & Conclusion</h2>
+        <p class="description">Based on the confusion matrices and performance metrics, we can conclude the following:</p>
+        <ul>
+            <li><b>Decision Tree </b>performed the best in terms of accuracy and precision.</li>
+            <li><b>Decision Tree and Gradient Boosting</b> had a higher recall, making it better at detecting fake news.</li>
+            <li>Further improvements can be made using ensemble techniques or additional data preprocessing.</li>
+        </ul>
+    </div>
+</body>
+</html>

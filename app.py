@@ -17,6 +17,10 @@ def process():
 def about():
     return render_template('about.html')
 
+@app.route('/Analyze')
+def Analyze():
+    return render_template('Analyze.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
