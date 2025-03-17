@@ -21,6 +21,9 @@ def about():
 def Analyze():
     return render_template('Analyze.html')
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

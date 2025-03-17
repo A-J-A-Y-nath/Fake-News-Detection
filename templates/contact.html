@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" tyoe="image/png" href="{{url_for('static',filename='logo.png')}}">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 2rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+        }
+        .navbar h1 {
+            font-size: 24px;
+            color: cyan;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: cyan;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: cyan;
+        }
+        ul {
+            padding-left: 20px;
+        }
+
+        a {
+            color: #0077cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+        }
+
+        .contact-details a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .features, .technologies, .how-it-works, .team {
+            margin-bottom: 30px;
+        }
+
+        .features ul, .technologies ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .team-members {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <h1>Fake News Detection</h1>
+            <ul class="nav-links">
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('Analyze')}}">Analyze</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('contact')}}">Contact</a></li>
+            </ul>
+        </nav>
+    <div class="container">
+        <!-- About Us Section -->
+        <section class="about-us">
+            <h1>Welcome to the <strong>Fake News Detection Project!</strong></h1>  
+            <p>Our mission is to help people identify <strong>fake news</strong> and prevent the spread of misinformation. This web-based platform analyzes news articles using machine learning models like <strong>Logistic Regression</strong>, <strong>Decision Tree</strong>, <strong>Gradient Boosting</strong>, and <strong>Random Forest</strong> to determine their credibility.</p>  
+            <p>I’m still improving this project and would love to hear your <strong>feedback</strong> or ideas for new features! If you're interested in contributing or just want to learn more, feel free to explore and stay connected. <strong>Together, we can make the internet a more trustworthy place!</strong></p>
+
+            <div class="links">
+                <a href="https://github.com/A-J-A-Y-nath/Fake-News-Detection.git" target="_blank">GitHub Repository</a>
+                <a href="https://www.linkedin.com/in/ajaynath-m-s-8481992a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+  <!-- Features Section -->
+<section class="features">
+    <h2><strong>Features</strong></h2>
+    <ul>
+        <li><strong>Fake News Detection:</strong> Analyze and verify news articles for authenticity.</li>
+        <li><strong>Machine Learning Models:</strong> Uses Logistic Regression, Decision Tree, Gradient Boosting, and Random Forest for classification.</li>
+        <li><strong>Credibility Score:</strong> Assigns a confidence score based on model predictions.</li>
+        <li><strong>Web-Based Platform:</strong> Provides an easy-to-use interface for checking news authenticity.</li>
+        <li><strong>Fast and Efficient:</strong> Quickly processes news articles and delivers results.</li>
+        <li><strong>Open for Improvement:</strong> Continuously evolving with user feedback and new features.</li>
+    </ul>
+</section>
+
+<!-- Technologies Used Section -->
+<section class="technologies">
+    <h2><strong>Technologies Used</strong></h2>
+    <ul>
+        <li><strong>Machine Learning:</strong> Implements various models to detect fake news.</li>
+        <li><strong>Natural Language Processing (NLP):</strong> Processes and analyzes textual data.</li>
+        <li><strong>Python:</strong> Handles backend logic and model execution.</li>
+        <li><strong>Flask:</strong> Powers the web-based interface.</li>
+        <li><strong>HTML/CSS/JavaScript:</strong> Builds the frontend for user interaction.</li>
+    </ul>
+</section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <p>
+                Our fake news detection system works in three simple steps:
+            </p>
+            <ol>
+                <li><strong>Input:</strong> Users submit a news article or link for analysis.</li>
+                <li><strong>Processing:</strong> The system analyzes the text, checks the source, and evaluates the credibility of the content.</li>
+                <li><strong>Output:</strong> Users receive a detailed report with a credibility score and recommendations.</li>
+            </ol>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team">
+            <h2>Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="{{url_for('static',filename='Ajay.JPG')}}" alt="Team Member 1">
+                    <p><strong>M S AJAYNATH</strong></p>
+                    <p>Full Stack Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{url_for('static',filename='abhi.jpg')}}" alt="Team Member 2">
+                    <p><strong>ABHIJITH J</strong></p>
+                    <p>Designer</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{url_for('static',filename='visal.jpg')}}" alt="Team Member 3">
+                    <p><strong>VISAL KRISHNA K</strong></p>
+                    <p>Video Editor</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{url_for('static',filename='sania.jpg')}}" alt="Team Member 4">
+                    <p><strong>SANIA VARMA</strong></p>
+                    <p>Data Analyst</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section class="contact-us">
+            <h1>Contact Us</h1>
+            <p>
+                If you have any questions, suggestions, or feedback, feel free to reach out to us. We'd love to hear from you!
+            </p>
+            <div class="contact-details">
+                <p><strong>Email:</strong> <a href="ajaynath1516@gmail.com">ajaynath1516@gmail.com</a></p>
+                <p><strong>Phone:</strong> +91 8590861516</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
