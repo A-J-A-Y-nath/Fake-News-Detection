@@ -5,94 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fake News Detection Analysis</title>
     <link rel="icon" tyoe="image/png" href="{{url_for('static',filename='logo.png')}}">
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            line-height: 2rem;
-            font-size: 1rem;
-            text-align: justify;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
-        }
-        .navbar h1 {
-            font-size: 24px;
-            color: cyan;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .nav-links a:hover {
-            color: cyan;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #1e1e1e;
-            border-radius: 5px;
-        }
-        h1, h2 {
-            color: cyan;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin-top: 20px; 
-            background: black; 
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        th, td { 
-            border: 1px solid #ddd; 
-            padding: 12px; 
-            text-align: center; 
-        }
-        th { 
-            background-color: #3498db; 
-            color: white; 
-        }
-        .matrix img { 
-            width: 100%; 
-            max-width: 400px; 
-            display: block; 
-            margin: 10px auto; 
-            border-radius: 5px; 
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
 </head>
 <body>
     <div class="container">
@@ -100,7 +13,6 @@
             <h1>Fake News Detection</h1>
             <ul class="nav-links">
                 <li><a href="{{url_for('index')}}">Home</a></li>
-                <li><a href="{{url_for('Analyze')}}">Analyze</a></li>
                 <li><a href="#">History</a></li>
                 <li><a href="{{url_for('about')}}">About</a></li>
                 <li><a href="{{url_for('contact')}}">Contact</a></li>
